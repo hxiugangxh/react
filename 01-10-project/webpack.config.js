@@ -25,7 +25,7 @@ let config = {
     //打包的路径文件
     path: path.resolve(__dirname, 'dist'),
     //打包的文件名称
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: website.publicPath
   },
   module: {
@@ -80,6 +80,7 @@ let config = {
     new webpack.ProvidePlugin({
       $: 'jquery'
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new copyWebpackPlugin([{
       from: __dirname + '/src/js/components',
       to: './public/js/components'

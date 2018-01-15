@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Nav extends React.Component {
+export default class Jspangc extends React.Component {
   render() {
     return (
       <div>
-        插件
+        C页面
       </div>
     );
   }
