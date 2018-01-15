@@ -13,7 +13,7 @@ if (process.env.type == 'dev') {
   };
 } else {
   var website = {
-    publicPath: './'
+    publicPath: 'http://localhost:1717/'
   };
 }
 

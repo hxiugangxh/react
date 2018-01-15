@@ -5,6 +5,7 @@ const htmlPlugins = require('./webpack_config/html_plugn_webpack');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const glob = require('glob');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 const entry = require('./webpack_config/entry_webpack.js');
 
 if (process.env.type == 'dev') {
@@ -13,7 +14,7 @@ if (process.env.type == 'dev') {
   };
 } else {
   var website = {
-    publicPath: './'
+    publicPath: 'http://localhost:1717/'
   };
 }
 
@@ -76,17 +77,13 @@ let config = {
   },
   plugins: [
     new uglify(),
-    new PurifyCSSPlugin({
-      // Give paths to parse for rules. These should be absolute!
-      paths: glob.sync(path.join(__dirname, 'src/html/*.html'))
-    }),
-    new PurifyCSSPlugin({
-      // Give paths to parse for rules. These should be absolute!
-      paths: glob.sync(path.join(__dirname, 'src/*.html'))
-    }),
     new webpack.ProvidePlugin({
       $: 'jquery'
     }),
+    new copyWebpackPlugin([{
+      from: __dirname + '/src/js/components',
+      to: './public/js/components'
+    }]),
     new webpack.optimize.CommonsChunkPlugin({
       //name对应入口文件中的名字，我们起的是jQuery
       name: 'jquery',
