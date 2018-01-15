@@ -94,7 +94,7 @@ module.exports = {
       //name对应入口文件中的名字，我们起的是jQuery
       name: 'jquery',
       //把文件打包到哪里，是一个路径
-      filename: 'dist/js/jquery.min.js',
+      filename: 'js/jquery.min.js',
       //最小打包的文件模块数，这里直接写2就好
       minChunks: 2
     })

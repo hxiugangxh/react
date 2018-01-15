@@ -1,17 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import css from './css/style.scss';
 
-export default class Entry extends React.Component {
-  render() {
-    return (
-      <div>
-        我是头部
-      </div>
-    );
-  }
+{
+  let str = 'Hello Webpack is new';
+  $('#title').html(str);
 }
-
-ReactDOM.render(
-  <Entry/>,
-  document.getElementById('example')
-);

@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const uglify = require('uglifyjs-webpack-plugin');
-const htmlPlugin = require('html-webpack-plugin');
+const htmlPlugins = require('./webpack_config/html_plugn_webpack');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const glob = require('glob');
 const PurifyCSSPlugin = require('purifycss-webpack');
@@ -17,7 +17,7 @@ if (process.env.type == 'dev') {
   };
 }
 
-module.exports = {
+let config = {
   devtool: 'eval-source-map',
   entry: entry.path,
   output: {
@@ -76,12 +76,9 @@ module.exports = {
   },
   plugins: [
     new uglify(),
-    new htmlPlugin({
-      minify: {
-        removeAttributeQuotes: true
-      },
-      hash: true,
-      template: './src/index.html'
+    new PurifyCSSPlugin({
+      // Give paths to parse for rules. These should be absolute!
+      paths: glob.sync(path.join(__dirname, 'src/html/*.html'))
     }),
     new PurifyCSSPlugin({
       // Give paths to parse for rules. These should be absolute!
@@ -94,7 +91,7 @@ module.exports = {
       //name对应入口文件中的名字，我们起的是jQuery
       name: 'jquery',
       //把文件打包到哪里，是一个路径
-      filename: 'dist/js/jquery.min.js',
+      filename: 'js/jquery.min.js',
       //最小打包的文件模块数，这里直接写2就好
       minChunks: 2
     })
@@ -120,3 +117,7 @@ module.exports = {
     ignored: /node_modules/
   }
 };
+
+config.plugins.push(...htmlPlugins.plugin);
+
+module.exports = config;
