@@ -27,10 +27,6 @@ let config = {
     filename: '[name].js',
     publicPath: website.publicPath
   },
-  resolve: {
-    root: path.resolve(__dirname,'src'),
-    modulesDirectories: ['node_modules']
-  },
   module: {
     rules: [
       {
