@@ -89,9 +89,13 @@ let config = {
     new webpack.ProvidePlugin({
       $: 'jquery'
     }),
+    new PurifyCSSPlugin({
+      // Give paths to parse for rules. These should be absolute!
+      paths: glob.sync(path.join(__dirname, 'src/*.html'))
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       //name对应入口文件中的名字，我们起的是jQuery
-      name: ['jquery', 'react'],
+      name: ['jquery', 'react', 'antd'],
       //把文件打包到哪里，是一个路径
       filename: 'js/[name].js',
       //最小打包的文件模块数，这里直接写2就好

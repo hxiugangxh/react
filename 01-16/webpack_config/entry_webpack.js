@@ -4,7 +4,8 @@ const entry = {};
 entry.path = {
   root: './src/root.js',
   jquery: 'jquery',
-  react: ['react', 'react-dom', 'react-router-dom']
+  react: ['react', 'react-dom', 'react-router-dom'],
+  antd: 'antd'
 };
 //进行模块化
 module.exports = entry;
