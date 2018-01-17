@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const htmlPlugins = require('./webpack_config/html_plugn_webpack');
-const extractTextPlugin = require('extract-text-webpack-plugin');
 const glob = require('glob');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const entry = require('./webpack_config/entry_webpack.js');
@@ -40,21 +39,12 @@ let config = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
-      // 使用extractTextPlugin插件的时候上面的修改成下面的
-      /*{
-        test: /\.css$/,
-        use: extractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      },*/
       {
         test: /\.(png|jpg|gif)/,
         use: [{
           loader: 'url-loader',
           options: {
-            limit: 5000,
-            outputPath: 'images/'
+            limit: 5000
           }
         }]
       },
@@ -101,8 +91,6 @@ let config = {
       //最小打包的文件模块数，这里直接写2就好
       minChunks: 2
     })
-    // 官方不推荐使用，他们认为css就应该打包到javaScript当中减少http的请求数
-    //new extractTextPlugin('/css/index.css')
   ],
   devServer: {
     //设置基本目录结构

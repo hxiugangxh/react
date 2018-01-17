@@ -11,8 +11,8 @@ import PCFooter from './js/components/pc_footer'
 export default class Index extends React.Component {
   render() {
     return (
-      <div>
-        <img src="./images/manhua.png" alt="logo"/>
+      <div>1
+        <img src={require('./images/manhua.png')} />
         <PCFooter />
       </div>
     );
