@@ -5,15 +5,15 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
+import './css/pc.css';
 
-import PCFooter from './js/components/pc_footer'
+import PCHeader from './js/components/pc_header';
 
 export default class Index extends React.Component {
   render() {
     return (
-      <div>1
-        <img src={require('./images/manhua.png')} />
-        <PCFooter />
+      <div>
+        <PCHeader/>
       </div>
     );
   }
