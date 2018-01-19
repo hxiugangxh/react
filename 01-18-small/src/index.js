@@ -6,14 +6,22 @@ import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 import './css/pc.css';
+import './css/mobile.css';
 
-import PCHeader from './js/components/pc_header';
+import PCIndex from './js/components/pc_index';
+import MobileIndex from './js/components/mobile_index';
+import MediaQuery from 'react-responsive';
 
 export default class Index extends React.Component {
   render() {
     return (
       <div>
-        <PCHeader/>
+        <MediaQuery query='(min-device-width: 1224px)'>
+          <PCIndex/>
+        </MediaQuery>
+        <MediaQuery query='(max-device-width: 1224px)'>
+          <MobileIndex/>
+        </MediaQuery>
       </div>
     );
   }

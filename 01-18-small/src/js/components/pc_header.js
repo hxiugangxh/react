@@ -1,6 +1,5 @@
 import React from 'react';
-import {Row, Col} from 'antd';
-import {Menu, Icon} from 'antd';
+import {Row, Col, Menu, Icon} from 'antd';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -13,8 +12,7 @@ export default class PCHeader extends React.Component {
     };
   };
 
-  handleClick(e) {
-    console.log('click ', e);
+  handleClick = (e) => {
     this.setState({
       current: e.key
     });
@@ -27,14 +25,14 @@ export default class PCHeader extends React.Component {
           <Col span={2}></Col>
           <Col span={4}>
             <a href="/" class="logo">
-              <img src={require('../../images/logo.png')} alt="logo"/>
+              <img src='../../images/logo.png' alt="logo"/>
               <span>ReactNews</span>
             </a>
           </Col>
           <Col span={16}>
-            <Menu onClick={this.handleClick.bind(this)} mode="horizontal" selectedKeys={[this.state.current]}>
+            <Menu onClick={this.handleClick} mode="horizontal" selectedKeys={[this.state.current]}>
               <Menu.Item key="top">
-                <Icon type="appstore"/>头条
+                <Icon type="mail"/>头条
               </Menu.Item>
               <Menu.Item key="shehui">
                 <Icon type="appstore"/>社会

@@ -1,10 +1,18 @@
 {
   "presets": [
     "react",
-    "env"
+    "env",
+    "stage-0"
   ],
   "plugins": [
     "react-html-attrs",
-    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css"
+      }
+    ]
   ]
 }

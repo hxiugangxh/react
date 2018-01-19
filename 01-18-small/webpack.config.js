@@ -87,6 +87,7 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.html'
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery'
     }),
