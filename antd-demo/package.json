@@ -16,7 +16,10 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",
+    "babel-plugin-react-html-attrs": "^2.1.0",
+    "fetch": "^1.1.0",
     "react-app-rewire-less": "^2.1.0",
-    "react-app-rewired": "^1.4.0"
+    "react-app-rewired": "^1.4.0",
+    "react-responsive": "^4.0.3"
   }
 }
