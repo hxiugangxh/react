@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../images/logo.svg';
 import '../css/App.css';
-import {Button} from 'antd';
 import PCIndex from './news/pc_index';
 import MobileIndex from './news/mobile_index';
 import MediaQuery from 'react-responsive';
