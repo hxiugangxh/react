@@ -8,7 +8,6 @@ import $ from 'jquery';
 import {
   HashRouter as Router,
   Route,
-  Link,
   Switch
 } from 'react-router-dom';
 import PCNewsDetails from './page/news/pc_news_details';
@@ -27,6 +26,7 @@ export default class Index extends React.Component {
     );
   }
 }
+
 
 ReactDOM.render(<Index/>, $('#root').get(0));
 registerServiceWorker();

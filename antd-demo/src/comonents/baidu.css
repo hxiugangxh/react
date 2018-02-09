@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+.header {
+    height: 60px;
+    line-height: 60px;
+}
+
+.header .nav:before {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.header .nav {
+    list-style: none;
+}
+
+.header .nav li {
+    float: right;
+    margin-right: 20px;
+}
+
+.header .nav li a {
+    color: #333;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.header .nav .gay a {
+    font-weight: 100;
+}
+
+.header .nav .more a {
+    background-color: #38f;
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+    padding: 4px;
+}
+
+.search {
+    text-align: center;
+}
+
+.search .box {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    margin: 0 auto;
+}

@@ -1,9 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import {Card} from 'antd';
-import {
-  BrowserRouter as Router,
-  Link
-} from 'react-router-dom';
 
 export default class PCNewsImageBlock extends React.Component {
   constructor() {
@@ -14,10 +11,14 @@ export default class PCNewsImageBlock extends React.Component {
   }
 
   componentWillMount() {
-    var myFetchOptions = {
+    console.log('componentWillMount');
+    let myFetchOptions = {
       method: 'GET'
     };
-    fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=' + this.props.type + '&count=' + this.props.count, myFetchOptions).then(response => response.json()).then(json => this.setState({news: json}));
+    let URL = 'http://newsapi.gugujiankong.com/Handler.ashx'
+      + '?action=getnews&type=' + this.props.type
+      + '&count=' + this.props.count;
+    fetch(URL, myFetchOptions).then(response => response.json()).then(json => this.setState({news: json}));
   };
 
   render() {
@@ -37,7 +38,7 @@ export default class PCNewsImageBlock extends React.Component {
       ? news.map((newsItem, index) => (
         <div key={index} class="imageblock">
           <Router>
-            <Link to={`/#/details/${newsItem.uniquekey}`} target="_blank">
+            <Link to={`details/${newsItem.uniquekey}`} target="_blank">
               <div class="custom-image">
                 <img alt="" style={styleImage} src={newsItem.thumbnail_pic_s}/>
               </div>
@@ -59,5 +60,5 @@ export default class PCNewsImageBlock extends React.Component {
         </Card>
       </div>
     );
-  };
+  }
 }
