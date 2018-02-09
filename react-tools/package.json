@@ -1,0 +1,31 @@
+{
+  "name": "react-tools",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@antv/data-set": "^0.8.5",
+    "chart.js": "^1.1.1",
+    "echarts": "^4.0.2",
+    "react": "^16.2.0",
+    "react-chartjs": "^1.2.0",
+    "react-dom": "^16.2.0",
+    "react-responsive-tables": "0.0.13",
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.6.3",
+    "babel-plugin-react-html-attrs": "^2.1.0",
+    "fetch": "^1.1.0",
+    "jquery": "^3.3.1",
+    "react-app-rewire-less": "^2.1.0",
+    "react-app-rewire-provide-plugin": "^1.0.0",
+    "react-app-rewired": "^1.4.1",
+    "react-router-dom": "^4.2.2"
+  }
+}
